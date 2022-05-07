@@ -4,7 +4,11 @@ import React from 'react';
 import { Home } from './styles';
 
 const HomePage = () => {
-  return <Home>Home</Home>;
+  return (
+    <Home>
+      <h1>Home</h1>
+    </Home>
+  );
 };
 
 export default HomePage;
