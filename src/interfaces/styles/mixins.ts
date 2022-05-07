@@ -4,7 +4,19 @@ export interface FlexboxProps {
   direction: 'row' | 'row-reverse' | 'column' | 'column-reverse';
 }
 
+export interface BlockSizeProps {
+  blockSize: string;
+  minBlockSize: string;
+  maxBlockSize: string;
+}
+
 export interface InlineSizeProps {
   inlineSize: string;
+  minInlineSize: string;
   maxInlineSize: string;
+}
+
+export interface SpacingProps {
+  start: number;
+  end: number;
 }
