@@ -1,4 +1,3 @@
-// styled.d.ts
 import '@emotion/react';
 
 //* Interfaces

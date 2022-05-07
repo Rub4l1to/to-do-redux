@@ -3,10 +3,12 @@ import { DefaultTheme } from 'styled-components';
 export const Theme: DefaultTheme = {
   fonts: {
     primary: {
-      regular: 'WorkSans-Regular',
-      medium: 'WorkSans-Medium',
-      bold: 'WorkSans-Bold',
-      extrabold: 'WorkSans-Extrabold',
+      light: 'Raleway-Light',
+      regular: 'Raleway-Regular',
+      medium: 'Raleway-Medium',
+      bold: 'Raleway-Bold',
+      semibold: 'Raleway-Bold',
+      extrabold: 'Raleway-Extrabold',
     },
   },
   breakpoints: {
@@ -17,6 +19,10 @@ export const Theme: DefaultTheme = {
     xl: '1200px',
   },
   colors: {
-    primary: 'blue',
+    primary: '#ffffff',
+    secondary: '#2873d0',
+    tertiary: '#141414',
+    quaternary: '#a1a1a1',
+    background: 'rgb(65, 63, 63)',
   },
 };

@@ -12,11 +12,17 @@ export interface Fonts {
 
 export interface Colors {
   primary: string;
+  secondary: string;
+  tertiary: string;
+  quaternary: string;
+  background: string;
 }
 
 interface FontTypes {
+  light: string;
   regular: string;
-  medium?: string;
+  medium: string;
+  semibold: string;
   bold: string;
-  extrabold?: string;
+  extrabold: string;
 }

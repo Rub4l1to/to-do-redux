@@ -2,6 +2,7 @@
   "name": "to-do-redux",
   "private": true,
   "version": "0.0.1",
+  "license": "Apache License",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
