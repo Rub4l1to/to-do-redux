@@ -3,10 +3,15 @@ import React from 'react';
 //* Styled
 import { Home } from './styles';
 
+import { Iterations, TodoList } from 'components';
+import { useAppSelector } from 'redux/hooks';
+
 const HomePage = () => {
+  const { menu } = useAppSelector((state) => state.example);
   return (
-    <Home>
-      <h1>Home</h1>
+    <Home toggleMenu={menu}>
+      <Iterations />
+      <TodoList />
     </Home>
   );
 };

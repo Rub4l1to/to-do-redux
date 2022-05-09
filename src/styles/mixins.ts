@@ -21,8 +21,8 @@ export const PaddingBlock = ({ start, end }: SpacingProps) => css`
 `;
 
 export const MarginBlock = ({ start, end }: SpacingProps) => css`
-  padding-block-start: ${start}rem;
-  padding-block-end: ${end}rem;
+  margin-block-start: ${start}rem;
+  margin-block-end: ${end}rem;
 `;
 
 export const PaddingInline = ({ start, end }: SpacingProps) => css`

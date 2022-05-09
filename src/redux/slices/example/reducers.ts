@@ -6,4 +6,8 @@ import { ExampleState } from '.';
 //* Initial state
 import { initialState } from './index';
 
-export default {};
+export default {
+  setToggleMenu(state: ExampleState) {
+    state.menu = !state.menu;
+  },
+};

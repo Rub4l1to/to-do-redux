@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { FontsFaces } from './fonts';
 
 export const GlobalStyles = css`
   * {
@@ -44,4 +45,12 @@ export const GlobalStyles = css`
     user-select: text;
     outline: 0;
   }
+
+  p {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  ${FontsFaces};
 `;

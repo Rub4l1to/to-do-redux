@@ -1,6 +1,4 @@
-import { DefaultTheme } from 'styled-components';
-
-export const Theme: DefaultTheme = {
+export const Theme = {
   fonts: {
     primary: {
       light: 'Raleway-Light',

@@ -1,11 +1,11 @@
-import { css } from 'styled-components';
+import { css } from '@emotion/react';
 
 //* Assets
 import { Raleway } from 'assets/fonts';
 
 export const FontsFaces = css`
   @font-face {
-    font-family: 'WorkSans-Light';
+    font-family: 'Raleway-Light';
     src: url(${Raleway.Light}) format('truetype');
   }
 
