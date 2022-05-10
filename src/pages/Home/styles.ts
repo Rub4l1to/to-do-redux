@@ -8,9 +8,7 @@ export const Home = styled('section')<{ toggleMenu: boolean }>`
   ${BlockSize({ blockSize: 'auto', minBlockSize: '100vh', maxBlockSize: 'max-content' })}
   background: ${({ theme: { colors } }) => colors.tertiary};
   color: ${({ theme: { colors } }) => colors.primary};
-  display: grid;
-  grid-template-columns: ${({ toggleMenu }) => (toggleMenu ? '80px' : '400px')} 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
-
-  transition: all 2s;
 `;

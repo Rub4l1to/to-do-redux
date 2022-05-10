@@ -19,11 +19,13 @@ const Iterations = () => {
   const { menu } = useAppSelector((state) => state.example);
 
   return (
-    <Styled.Iterations>
-      <Styled.Heading>
-        <Styled.Title>Add a new item</Styled.Title>
-        <Styled.Subtitle>Create a new article with the following data</Styled.Subtitle>
-      </Styled.Heading>
+    <Styled.Iterations toggle={menu}>
+      <Styled.Content toggle={menu}>
+        <Styled.Heading>
+          <Styled.Title>Add a new item</Styled.Title>
+          <Styled.Subtitle>Create a new article with the following data</Styled.Subtitle>
+        </Styled.Heading>
+      </Styled.Content>
       <Button toggleButton={menu} onClick={() => dispatch(setToggleMenu())}>
         <AiOutlineArrowRight />
       </Button>
