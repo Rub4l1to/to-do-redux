@@ -12,11 +12,11 @@ export const fadeIn = keyframes`
 `;
 
 export const fadeOut = keyframes`
-    0% {
+    100% {
         opacity: 1;
 
     }
-    100% {
+    0% {
         opacity: 0;
 
     }

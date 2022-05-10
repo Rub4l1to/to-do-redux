@@ -10,23 +10,30 @@ export const Button = styled('button')<{ toggleButton: boolean }>`
   background: ${({ theme: { colors } }) => colors.secondary};
   color: ${({ theme: { colors } }) => colors.primary};
   position: absolute;
-  top: 5%;
-  right: -20px;
-  inline-size: 50px;
-  cursor: pointer;
+  left: 50%;
+  bottom: -25px;
+  inline-size: 40px;
+  transform: translateX(-50%) rotate(${({ toggleButton }) => (toggleButton ? '-90deg' : '90deg')});
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.5s ease-in-out;
-  transform: ${({ toggleButton }) => (toggleButton ? 'rotateY(0)' : 'rotateY(180deg)')};
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
+    cursor: pointer;
     background: ${({ theme: { colors } }) => colors.primary};
     color: ${({ theme: { colors } }) => colors.secondary};
   }
 
   & svg {
-    font-size: 16px;
+    font-size: 16pt;
     font-weight: bold;
+  }
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    right: -20px;
+    left: inherit;
+    bottom: 50%;
+    transform: rotateY(${({ toggleButton }) => (toggleButton ? '180deg' : '0deg')});
   }
 `;

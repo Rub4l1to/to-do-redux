@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
-//* Mixins
-import { BlockSize, InlineSize } from 'styles/mixins';
-
-export const Home = styled('section')<{ toggleMenu: boolean }>`
-  ${InlineSize({ inlineSize: '100vw', minInlineSize: '100vw', maxInlineSize: '100vw' })}
-  ${BlockSize({ blockSize: 'auto', minBlockSize: '100vh', maxBlockSize: 'max-content' })}
+export const Home = styled('section')`
   background: ${({ theme: { colors } }) => colors.tertiary};
   color: ${({ theme: { colors } }) => colors.primary};
-  display: flex;
-  flex-wrap: wrap;
+  min-block-size: 100vh;
   gap: 40px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    flex-direction: row;
+  }
 `;
