@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
+import { fadeIn } from 'styles/animations';
 
 //* Button styles
-import { Button } from 'components/Buttons/Arrow/styles';
-import { fadeIn, fadeOut } from 'styles/animations';
 import { PaddingBlock, PaddingInline } from 'styles/mixins';
 
 export const Iterations = styled('article')<{ toggle: boolean }>`
@@ -11,20 +10,35 @@ export const Iterations = styled('article')<{ toggle: boolean }>`
   position: relative;
   top: 0;
   background: ${({ theme: { colors } }) => colors.background};
-  inline-size: ${({ toggle }) => (toggle ? '380px' : '30px')};
-
-  transition: inline-size 1s ease;
+  block-size: ${({ toggle }) => (toggle ? '650px' : '30px')};
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    animation: ${fadeIn} 1s ease-in-out;
+    transition: block-size 1s ease;
+  }
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    inline-size: ${({ toggle }) => (toggle ? '380px' : '30px')};
+    block-size: 100vh;
+    transition: inline-size 0.2s ease;
+  }
 `;
 
 export const Content = styled('div')<{ toggle: boolean }>`
   position: relative;
-  inline-size: fit-content;
+  inline-size: initial;
   display: flex;
-  gap: 24px;
+  gap: 12px;
   flex-direction: column;
-  transition: all 1s;
-  transform: ${({ toggle }) => (toggle ? 'translateX(0)' : 'translateX(-150%)')};
+  transform: ${({ toggle }) => (toggle ? 'translateY(0)' : 'translateY(-150%)')};
+  opacity: ${({ toggle }) => (toggle ? '1' : '0')};
+  transition: transform 1s ease;
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    inline-size: fit-content;
+    transform: ${({ toggle }) => (toggle ? 'translateX(0)' : 'translateX(-150%)')};
+  }
 `;
 
 export const Heading = styled('div')`

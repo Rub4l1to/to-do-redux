@@ -6,5 +6,9 @@ export const Home = styled('section')`
   min-block-size: 100vh;
   gap: 40px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    flex-direction: row;
+  }
 `;

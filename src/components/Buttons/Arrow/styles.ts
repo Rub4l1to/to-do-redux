@@ -5,16 +5,14 @@ import { PaddingBlock, PaddingInline } from 'styles/mixins';
 
 export const Button = styled('button')<{ toggleButton: boolean }>`
   border: none;
-  ${PaddingBlock({ start: 0.75, end: 0.75 })};
+  ${PaddingBlock({ start: 1, end: 1 })};
   ${PaddingInline({ start: 0.75, end: 0.75 })};
   background: ${({ theme: { colors } }) => colors.secondary};
   color: ${({ theme: { colors } }) => colors.primary};
   position: absolute;
-  left: inherit;
-  right: -20px;
-  bottom: 50%;
+  bottom: -20px;
+  left: 50%;
   inline-size: 40px;
-  transform: translateX(20%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,6 +28,16 @@ export const Button = styled('button')<{ toggleButton: boolean }>`
     font-size: 16pt;
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
-    transform: rotate(${({ toggleButton }) => (toggleButton ? '-180deg' : '0deg')});
+    transform: rotate(${({ toggleButton }) => (toggleButton ? '-90deg' : '90deg')});
+  }
+
+  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
+    left: inherit;
+    right: -25px;
+    bottom: 49%;
+
+    & svg {
+      transform: rotate(${({ toggleButton }) => (toggleButton ? '-180deg' : '0deg')});
+    }
   }
 `;
