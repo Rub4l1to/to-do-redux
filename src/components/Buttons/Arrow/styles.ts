@@ -10,17 +10,18 @@ export const Button = styled('button')<{ toggleButton: boolean }>`
   background: ${({ theme: { colors } }) => colors.secondary};
   color: ${({ theme: { colors } }) => colors.primary};
   position: absolute;
-  left: 50%;
-  bottom: -25px;
+  left: inherit;
+  right: -20px;
+  bottom: 50%;
   inline-size: 40px;
-  transform: translateX(-50%) rotate(${({ toggleButton }) => (toggleButton ? '-90deg' : '90deg')});
+  transform: translateX(20%);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
     background: ${({ theme: { colors } }) => colors.primary};
     color: ${({ theme: { colors } }) => colors.secondary};
   }
@@ -28,12 +29,7 @@ export const Button = styled('button')<{ toggleButton: boolean }>`
   & svg {
     font-size: 16pt;
     font-weight: bold;
-  }
-
-  @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
-    right: -20px;
-    left: inherit;
-    bottom: 50%;
-    transform: rotateY(${({ toggleButton }) => (toggleButton ? '180deg' : '0deg')});
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(${({ toggleButton }) => (toggleButton ? '-180deg' : '0deg')});
   }
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 //* Components
-import { Button } from 'components';
+import { Arrow, FormCreator } from 'components';
 
 //* Icons
 import { AiOutlineArrowRight } from 'react-icons/ai';
@@ -20,11 +20,17 @@ const Iterations = () => {
 
   return (
     <Styled.Iterations toggle={menu}>
-      <Styled.Content toggle={menu}>Iterations</Styled.Content>
+      <Styled.Content toggle={menu}>
+        <Styled.Heading>
+          <Styled.Title>Add a new item</Styled.Title>
+          <Styled.Subtitle>Create a new article with the following data</Styled.Subtitle>
+        </Styled.Heading>
+        <FormCreator />
+      </Styled.Content>
 
-      <Button toggleButton={menu} onClick={() => dispatch(setToggleMenu())}>
+      <Arrow toggleButton={menu} onClick={() => dispatch(setToggleMenu())}>
         <AiOutlineArrowRight />
-      </Button>
+      </Arrow>
     </Styled.Iterations>
   );
 };
