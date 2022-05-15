@@ -37,7 +37,9 @@ export const FormCreator = () => {
           <InputNumber name="price" label="Price" />
           <InputNumber name="amount" label="Amount" />
           <TextArea name="description" label="Details" />
-          <Button disable={!isValid || !dirty}>Add item</Button>
+          <Button type="submit" disabled={!isValid || !dirty}>
+            Add item
+          </Button>
         </Styled.MainForm>
       )}
     </Formik>

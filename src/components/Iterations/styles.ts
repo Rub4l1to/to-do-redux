@@ -14,14 +14,14 @@ export const Iterations = styled('article')<{ toggle: boolean }>`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
-    animation: ${fadeIn} 1s ease-in-out;
-    transition: block-size 1s ease;
+    animation: ${fadeIn} 0.8s ease-in-out;
+    transition: block-size 0.8s ease;
   }
 
   @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
     inline-size: ${({ toggle }) => (toggle ? '380px' : '30px')};
     block-size: 100vh;
-    transition: inline-size 0.2s ease;
+    transition: inline-size 0.5s ease;
   }
 `;
 

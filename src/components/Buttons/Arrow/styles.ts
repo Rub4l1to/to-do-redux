@@ -38,6 +38,7 @@ export const Button = styled('button')<{ toggleButton: boolean }>`
 
     & svg {
       transform: rotate(${({ toggleButton }) => (toggleButton ? '-180deg' : '0deg')});
+      transition: transform 0.3s ease-in-out;
     }
   }
 `;

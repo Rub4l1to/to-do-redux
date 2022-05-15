@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { PaddingBlock, PaddingInline } from 'styles/mixins';
 
-export const Button = styled('button')`
+export const Button = styled('button')<{ disable: boolean }>`
   border: none;
   background: ${({ theme: { colors } }) => colors.tertiary};
   text-transform: uppercase;

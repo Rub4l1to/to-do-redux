@@ -5,11 +5,16 @@ import * as Styled from './styles';
 
 interface Props {
   children: string;
-  disable: boolean;
+  disabled: boolean;
+  type: 'submit' | 'button';
 }
 
-const Button = ({ children, disable }: Props) => {
-  return <Styled.Button disabled={disable}>{children}</Styled.Button>;
+const Button = ({ children, disabled, ...props }: Props) => {
+  return (
+    <Styled.Button {...props} disable={disabled}>
+      {children}
+    </Styled.Button>
+  );
 };
 
 export default Button;

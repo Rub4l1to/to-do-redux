@@ -2,6 +2,7 @@ export { default as Iterations } from './Iterations';
 export { default as TodoList } from './TodoList';
 export { default as FormCreator } from './FormCreator';
 export { default as ErrorMessage } from './ErrorMessage';
+export { default as Search } from './Search';
 
 //* Button
 export { default as Arrow } from './Buttons/Arrow';
