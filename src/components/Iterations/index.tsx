@@ -12,11 +12,13 @@ import * as Styled from './styles';
 //* Redux
 import { useAppDispatch, useAppSelector } from 'redux/hooks';
 //---- Actions
-import { setToggleMenu } from 'redux/slices/example';
+import { setToggleMenu } from 'redux/slices/iterations';
+//---- Getters
+import { selectIterations } from 'redux/slices/iterations/getters';
 
 const Iterations = () => {
   const dispatch = useAppDispatch();
-  const { menu } = useAppSelector((state) => state.example);
+  const { menu } = useAppSelector(selectIterations);
 
   return (
     <Styled.Iterations toggle={menu}>

@@ -2,8 +2,9 @@
 import { combineReducers } from 'redux';
 
 //* Reducers
-import { example } from './slices';
+import { iterations, todos } from './slices';
 
 export default combineReducers({
-  example,
+  iterations,
+  todos,
 });
