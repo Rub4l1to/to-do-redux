@@ -10,6 +10,9 @@ Notes manager with redux-based functionality and emotion stylish
 
 ## Features
 
+- Add a new item.
+- Edit a created task
+- Search items
 
 ## Setup
 
