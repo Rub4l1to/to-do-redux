@@ -1,10 +1,14 @@
 import React, { ChangeEvent, useRef, useCallback, useContext } from 'react';
 
+import { searchItem } from 'redux/slices/todos';
+import { useAppDispatch } from '../redux/hooks';
+
 interface Response {
   onQueryChanged: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const useSearch = (): Response => {
+  const dispatch = useAppDispatch();
   const debounceRef = useRef<NodeJS.Timeout>();
 
   const onQueryChanged = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -12,7 +16,7 @@ export const useSearch = (): Response => {
     if (debounceRef.current) {
       clearTimeout(debounceRef.current);
     }
-    debounceRef.current = setTimeout(() => console.log(query), 500);
+    debounceRef.current = setTimeout(() => dispatch(searchItem(query)), 500);
   }, []);
 
   return {

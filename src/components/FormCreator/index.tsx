@@ -4,13 +4,18 @@ import { Formik } from 'formik';
 //* Components
 import { Button } from 'components/Buttons';
 import { InputText, InputNumber, TextArea } from 'components/FormikFields';
+
 //* Helpers
 import { FormSchema } from 'helpers/validations';
 
 //* Styled Components
 import * as Styled from './styles';
 
-interface FormCreatorModel {
+//* Redux
+import { useAppDispatch } from 'redux/hooks';
+import { addItem } from 'redux/slices/todos';
+
+export interface FormCreatorModel {
   name: string;
   price: number;
   description: string;
@@ -18,6 +23,8 @@ interface FormCreatorModel {
 }
 
 export const FormCreator: FC = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <Formik
       initialValues={
@@ -28,7 +35,10 @@ export const FormCreator: FC = () => {
           amount: 0,
         } as FormCreatorModel
       }
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values, { resetForm }) => {
+        dispatch(addItem(values));
+        resetForm();
+      }}
       validationSchema={FormSchema}
     >
       {({ handleSubmit, isValid, dirty }) => (

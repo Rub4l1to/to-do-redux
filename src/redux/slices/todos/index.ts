@@ -6,14 +6,14 @@ import reducers from './reducers';
 
 export interface TodosState {
   items: TodoModel[];
-  searchItems: TodoModel[];
+  wantedItems: TodoModel[];
   item: TodoModel;
   itemEdit: TodoModel;
 }
 
 export const initialState = {
   items: [],
-  searchItems: [],
+  wantedItems: [],
   item: {} as TodoModel,
   itemEdit: {} as TodoModel,
 } as TodosState;
@@ -25,6 +25,6 @@ export const todos = createSlice({
   extraReducers: ({ addMatcher, addCase }) => {},
 });
 
-export const {} = todos.actions;
+export const { addItem, removeItem, searchItem, updateItem } = todos.actions;
 
 export default todos.reducer;
