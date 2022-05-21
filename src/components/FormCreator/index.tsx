@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 
 //* Components
 import { Button } from 'components/Buttons';
-import { InputText, InputNumber, TextArea } from 'components/Fields';
+import { InputText, InputNumber, TextArea } from 'components/FormikFields';
 //* Helpers
 import { FormSchema } from 'helpers/validations';
 

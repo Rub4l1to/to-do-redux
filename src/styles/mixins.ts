@@ -23,7 +23,7 @@ export const MarginInline = ({ start, end }: SpacingProps) => css`
   margin-inline-end: ${end}rem;
 `;
 
-export const flexbox = ({ justify, align, direction }: FlexboxProps) => css`
+export const Flexbox = ({ justify, align, direction }: FlexboxProps) => css`
   display: flex;
   justify-content: ${justify};
   align-items: ${align};
