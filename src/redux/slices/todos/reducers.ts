@@ -23,7 +23,8 @@ export default {
 
   removeItem: (state: TodosState, action: PayloadAction<string>) => {
     const { payload } = action;
-    state.wantedItems = state.wantedItems.filter((item) => item.id !== payload);
+
+    state.items = state.items.filter((item) => item.id !== payload);
   },
   searchItem: (state: TodosState, action: PayloadAction<string>) => {
     const { payload } = action;

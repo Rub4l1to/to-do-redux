@@ -16,6 +16,7 @@ interface InputNumberProps {
   placeholder?: string;
   style?: CSSProperties;
   label: string;
+  disabled?: boolean;
   [x: string]: any;
 }
 

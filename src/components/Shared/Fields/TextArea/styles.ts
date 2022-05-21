@@ -13,4 +13,8 @@ export const InputTextArea = styled.textarea<{ error?: boolean }>`
   resize: none;
   block-size: 150px;
   border: 1px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.tertiary)};
+
+  &:disabled {{
+    cursor: not-allowed;
+  }
 `;

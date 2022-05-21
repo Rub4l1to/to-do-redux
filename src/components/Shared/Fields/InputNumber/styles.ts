@@ -24,4 +24,8 @@ export const InputNumberField = styled.input<{ error?: boolean }>`
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
+
+  &:disabled {{
+    cursor: not-allowed;
+  }
 `;

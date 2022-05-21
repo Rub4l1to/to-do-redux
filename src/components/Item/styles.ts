@@ -14,10 +14,6 @@ export const Item = styled('div')`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   animation: ${fadeIn} 500ms ease-in;
-
-  &:hover {
-    transform: scale(1.01);
-  }
 `;
 
 export const Section = styled('div')`
@@ -30,4 +26,21 @@ export const Label = styled('label')`
   font-family: ${({ theme: { fonts } }) => fonts.primary.bold};
   color: ${({ theme }) => theme.colors.tertiary};
   font-weight: bold;
+`;
+
+export const Actions = styled('div')`
+  ${Flexbox({ justify: 'flex-end', align: 'flex-start', direction: 'row' })};
+  gap: 8px;
+`;
+
+export const Icon = styled('span')<{ color: 'danger' | 'standar' }>`
+  font-size: 1.5rem;
+  color: ${({ theme: { colors }, color }) => {
+    switch (color) {
+      case 'danger':
+        return 'rgb(172, 20, 20)';
+      default:
+        return colors.secondary;
+    }
+  }};
 `;

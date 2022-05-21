@@ -1,7 +1,9 @@
-import React, { ChangeEvent, useRef, useCallback, useContext } from 'react';
+import React, { ChangeEvent, useRef, useCallback } from 'react';
 
+//* Redux
+import { useAppDispatch } from 'redux/hooks';
+//---- Actions
 import { searchItem } from 'redux/slices/todos';
-import { useAppDispatch } from '../redux/hooks';
 
 interface Response {
   onQueryChanged: (event: ChangeEvent<HTMLInputElement>) => void;

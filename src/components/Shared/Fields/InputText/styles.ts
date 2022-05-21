@@ -17,4 +17,7 @@ export const InputTextField = styled.input<{ error?: boolean }>`
   &::placeholder {
     font-family: ${({ theme: { fonts } }) => fonts.primary.regular};
   }
+  &:disabled {{
+    cursor: not-allowed;
+  }
 `;
