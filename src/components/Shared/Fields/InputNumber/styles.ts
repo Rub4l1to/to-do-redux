@@ -14,6 +14,7 @@ export const InputNumberField = styled.input<{ error?: boolean }>`
 
   inline-size: 100%;
   transition: all 300ms;
+  -webkit-transition: all 300ms;
   font-family: ${({ theme: { fonts } }) => fonts.primary.regular};
 
   &::placeholder {

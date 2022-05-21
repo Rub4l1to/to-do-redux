@@ -16,12 +16,14 @@ export const Iterations = styled('article')<{ toggle: boolean }>`
   @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
     animation: ${fadeIn} 0.8s ease-in-out;
     transition: block-size 0.8s ease;
+    -webkit-transition: block-size 0.8s ease;
   }
 
   @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
     inline-size: ${({ toggle }) => (toggle ? '380px' : '30px')};
     block-size: 100vh;
     transition: inline-size 0.5s ease;
+    -webkit-transition: inline-size 0.5s ease;
   }
 `;
 
@@ -34,6 +36,7 @@ export const Content = styled('div')<{ toggle: boolean }>`
   transform: ${({ toggle }) => (toggle ? 'translateY(0)' : 'translateY(-150%)')};
   opacity: ${({ toggle }) => (toggle ? '1' : '0')};
   transition: transform 1s ease;
+  -webkit-transition: transform 1s ease;
 
   @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.md}) {
     inline-size: fit-content;

@@ -12,6 +12,7 @@ export const Item = styled('div')`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.tertiary};
   transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
   cursor: pointer;
   animation: ${fadeIn} 500ms ease-in;
 `;

@@ -12,5 +12,5 @@ interface InputNumberProps {
 }
 
 export const InputNumberField: FC<InputNumberProps> = ({ hasErrors, style, label, ...props }) => {
-  return <Styled.InputNumberField error={hasErrors} {...props} />;
+  return <Styled.InputNumberField step="any" pattern="[0-9]*" error={hasErrors} {...props} />;
 };

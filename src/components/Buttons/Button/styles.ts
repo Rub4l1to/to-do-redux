@@ -11,6 +11,7 @@ export const Button = styled('button')<{ disable: boolean }>`
   ${PaddingInline({ start: 1, end: 1 })};
   ${PaddingBlock({ start: 1, end: 1 })};
   transition: all 1s;
+  -webkit-transition: all 1s;
   color: ${({ theme: { colors } }) => colors.primary};
 
   &:hover {

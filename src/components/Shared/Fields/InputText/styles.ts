@@ -12,6 +12,7 @@ export const InputTextField = styled.input<{ error?: boolean }>`
   outline: none;
   inline-size: 100%;
   transition: all 300ms;
+  -webkit-transition: all 300ms;
   font-family: ${({ theme: { fonts } }) => fonts.primary.regular};
 
   &::placeholder {
