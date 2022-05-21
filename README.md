@@ -8,6 +8,10 @@
 
 Notes manager with redux-based functionality and emotion stylish
 
+![Captura de Pantalla 2022-05-21 a las 19 52 57](https://user-images.githubusercontent.com/48188704/169663536-8a22a322-31c7-42ef-9a1a-21a836642b41.png)
+
+
+
 ## Features
 
 - Add a new item.
