@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //* Components
 import { Search, ItemList } from 'components';
@@ -6,7 +6,7 @@ import { Search, ItemList } from 'components';
 //* Styles
 import * as Styled from './styles';
 
-const TodoList = () => {
+export const TodoList: FC = () => {
   return (
     <Styled.TodoList>
       <Search />
@@ -14,5 +14,3 @@ const TodoList = () => {
     </Styled.TodoList>
   );
 };
-
-export default TodoList;

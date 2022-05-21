@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
-//* Mixins
-import { PaddingBlock, PaddingInline } from 'styles/mixins';
-
-export const List = styled('div')``;
+export const List = styled('div')`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 
 export const Heading = styled('div')``;
 

@@ -1,8 +1,10 @@
 import React, { ChangeEvent, useRef, useCallback, useContext } from 'react';
 
-//* Context
+interface Response {
+  onQueryChanged: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
-export const useSearch = () => {
+export const useSearch = (): Response => {
   const debounceRef = useRef<NodeJS.Timeout>();
 
   const onQueryChanged = useCallback((event: ChangeEvent<HTMLInputElement>) => {

@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 //* Formik
 import { useField } from 'formik';
@@ -9,7 +9,7 @@ import { ErrorMessage } from 'components';
 //* Styled Components
 import * as Styled from './styles';
 
-interface Props {
+interface InputNumberProps {
   name: string;
   noErrors?: boolean;
   placeholder?: string;
@@ -18,7 +18,7 @@ interface Props {
   [x: string]: any;
 }
 
-const InputNumber = ({ noErrors, style, label, ...props }: Props) => {
+export const InputNumber: FC<InputNumberProps> = ({ noErrors, style, label, ...props }) => {
   const [field, meta] = useField(props);
   const hasErrors = meta.touched && meta.error !== undefined;
 
@@ -30,5 +30,3 @@ const InputNumber = ({ noErrors, style, label, ...props }: Props) => {
     </Styled.InputNumber>
   );
 };
-
-export default InputNumber;

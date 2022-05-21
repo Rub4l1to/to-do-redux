@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //* Hooks
 import { useSearch } from 'hooks';
@@ -6,10 +6,8 @@ import { useSearch } from 'hooks';
 //* Styles
 import * as Styled from './styles';
 
-const Search = () => {
+export const Search: FC = () => {
   const { onQueryChanged } = useSearch();
 
   return <Styled.Search onChange={onQueryChanged} placeholder="Search.." />;
 };
-
-export default Search;

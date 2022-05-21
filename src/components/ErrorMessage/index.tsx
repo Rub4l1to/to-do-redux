@@ -1,7 +1,10 @@
-import { ErrorMessage } from 'formik';
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
+
 //* Icons
 import { MdError } from 'react-icons/md';
+
+//* Formik
+import { ErrorMessage } from 'formik';
 
 //* Styled Components
 import * as Styled from './styles';
@@ -12,7 +15,7 @@ interface ErrorMessageProps {
   [x: string]: any;
 }
 
-const ErrorMSG = ({ name = '', children }: ErrorMessageProps) =>
+export const ErrorMSG: FC<ErrorMessageProps> = ({ name = '', children }) =>
   children ? (
     <Styled.ErrorBase>{children}</Styled.ErrorBase>
   ) : (
@@ -21,5 +24,3 @@ const ErrorMSG = ({ name = '', children }: ErrorMessageProps) =>
       <ErrorMessage name={name} component="span" />
     </Styled.ErrorMessage>
   );
-
-export default ErrorMSG;

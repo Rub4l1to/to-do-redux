@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 //* Formik
 import { useField } from 'formik';
@@ -6,7 +6,7 @@ import { useField } from 'formik';
 //* Styled Components
 import * as Styled from './styles';
 
-interface Props {
+interface TextAreaProps {
   name: string;
   noErrors?: boolean;
   placeholder?: string;
@@ -15,8 +15,8 @@ interface Props {
   [x: string]: any;
 }
 
-const TextArea = ({ noErrors, style, label, ...props }: Props) => {
-  const [field, meta] = useField(props);
+export const TextArea: FC<TextAreaProps> = ({ noErrors, style, label, ...props }) => {
+  const [field] = useField(props);
 
   return (
     <Styled.TextArea>
@@ -25,5 +25,3 @@ const TextArea = ({ noErrors, style, label, ...props }: Props) => {
     </Styled.TextArea>
   );
 };
-
-export default TextArea;

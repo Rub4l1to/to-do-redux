@@ -1,13 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 
 //* Interfaces
-import { ExampleState } from '.';
+import { IterationsState } from '.';
 
 //* Initial state
 import { initialState } from './index';
 
 export default {
-  setToggleMenu(state: ExampleState) {
+  setToggleMenu(state: IterationsState) {
     state.menu = !state.menu;
   },
 };

@@ -1,16 +1,14 @@
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 //* Styles
 import * as Styled from './styles';
 
-interface Props {
+interface ArrrowProps {
   children: ReactNode;
   toggleButton: boolean;
   onClick?: () => void;
 }
 
-const Button = ({ children, ...props }: Props) => {
+export const Arrow: FC<ArrrowProps> = ({ children, ...props }) => {
   return <Styled.Button {...props}>{children}</Styled.Button>;
 };
-
-export default Button;

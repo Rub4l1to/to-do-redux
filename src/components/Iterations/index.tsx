@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 //* Components
-import { Arrow, FormCreator } from 'components';
+import { Arrow } from 'components/Buttons';
+import { FormCreator } from 'components';
 
 //* Icons
 import { AiOutlineArrowRight } from 'react-icons/ai';
@@ -16,7 +17,7 @@ import { setToggleMenu } from 'redux/slices/iterations';
 //---- Getters
 import { selectIterations } from 'redux/slices/iterations/getters';
 
-const Iterations = () => {
+export const Iterations: FC = () => {
   const dispatch = useAppDispatch();
   const { menu } = useAppSelector(selectIterations);
 
@@ -36,5 +37,3 @@ const Iterations = () => {
     </Styled.Iterations>
   );
 };
-
-export default Iterations;

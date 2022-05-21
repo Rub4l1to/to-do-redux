@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 //* Formik
 import { useField } from 'formik';
@@ -9,7 +9,7 @@ import { ErrorMessage } from 'components';
 //* Styled Components
 import * as Styled from './styles';
 
-interface Props {
+interface InputTextProps {
   name: string;
   noErrors?: boolean;
   label?: string;
@@ -18,7 +18,7 @@ interface Props {
   [x: string]: any;
 }
 
-const InputText = ({ noErrors, style, label, ...props }: Props) => {
+export const InputText: FC<InputTextProps> = ({ noErrors, style, label, ...props }) => {
   const [field, meta] = useField(props);
   const hasErrors = meta.touched && meta.error !== undefined;
 
@@ -30,5 +30,3 @@ const InputText = ({ noErrors, style, label, ...props }: Props) => {
     </Styled.InputText>
   );
 };
-
-export default InputText;

@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Formik } from 'formik';
 
 //* Components
-import { Button, InputText, InputNumber, TextArea } from 'components';
-
+import { Button } from 'components/Buttons';
+import { InputText, InputNumber, TextArea } from 'components/Fields';
 //* Helpers
 import { FormSchema } from 'helpers/validations';
 
 //* Styled Components
 import * as Styled from './styles';
 
-interface IProps {
+interface FormCreatorModel {
   name: string;
   price: number;
   description: string;
   amount: number;
 }
 
-export const FormCreator = () => {
+export const FormCreator: FC = () => {
   return (
     <Formik
       initialValues={
@@ -26,7 +26,7 @@ export const FormCreator = () => {
           price: 0,
           description: '',
           amount: 0,
-        } as IProps
+        } as FormCreatorModel
       }
       onSubmit={(values) => console.log(values)}
       validationSchema={FormSchema}
@@ -45,5 +45,3 @@ export const FormCreator = () => {
     </Formik>
   );
 };
-
-export default FormCreator;
