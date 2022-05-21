@@ -17,9 +17,11 @@ export const ItemList: FC = () => {
   return (
     <Styled.List>
       <Styled.Title>{items.length !== 0 ? 'List of items' : 'No items found'}</Styled.Title>
-      {items.map(({ id, ...props }: TodoModel) => (
-        <Item key={`${id}`} {...{ id, ...props }} />
-      ))}
+      <Styled.Items>
+        {items.map(({ id, ...props }: TodoModel) => (
+          <Item key={`${id}`} {...{ id, ...props }} />
+        ))}
+      </Styled.Items>
     </Styled.List>
   );
 };

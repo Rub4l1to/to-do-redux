@@ -12,15 +12,7 @@ export interface TodosState {
 }
 
 export const initialState = {
-  items: [
-    {
-      id: '1',
-      name: 'Todo 1',
-      description: 'Description 1',
-      amount: 1,
-      price: 1,
-    },
-  ],
+  items: [],
   searchItems: [],
   item: {} as TodoModel,
   itemEdit: {} as TodoModel,

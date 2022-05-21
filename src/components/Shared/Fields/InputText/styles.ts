@@ -8,7 +8,7 @@ export const InputTextField = styled.input<{ error?: boolean }>`
   ${PaddingBlock({ start: 0.875, end: 0.875 })};
   ${PaddingInline({ start: 0.75, end: 0.75 })};
   font-size: 1rem;
-  border: 2px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.primary)};
+  border: 1px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.tertiary)};
   outline: none;
   inline-size: 100%;
   transition: all 300ms;

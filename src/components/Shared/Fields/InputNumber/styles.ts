@@ -9,7 +9,7 @@ export const InputNumberField = styled.input<{ error?: boolean }>`
 
   -moz-appearance: textfield;
   font-size: 1rem;
-  border: 2px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.primary)};
+  border: 1px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.tertiary)};
   outline: none;
 
   inline-size: 100%;

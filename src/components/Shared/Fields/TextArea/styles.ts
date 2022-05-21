@@ -12,5 +12,5 @@ export const InputTextArea = styled.textarea<{ error?: boolean }>`
   font-family: ${({ theme: { fonts } }) => fonts.primary.regular};
   resize: none;
   block-size: 150px;
-  border: 2px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.primary)};
+  border: 1px solid ${({ theme: { colors }, error }) => (error ? 'red' : colors.tertiary)};
 `;
