@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
 //* Styles
 import * as Styled from './styles';
@@ -7,16 +7,25 @@ import * as Styled from './styles';
 import { Item } from 'components';
 import { TodoModel } from 'interfaces/redux/todos';
 
-interface ItemListProps {
-  items: TodoModel[];
-}
+//* Redux
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
+//* Getters
+import { selectTodos } from 'redux/slices/todos/getters';
+import { getItems } from 'redux/slices/todos';
 
-export const ItemList: FC<ItemListProps> = ({ items }) => {
+export const ItemList: FC = () => {
+  const { items, wantedItems } = useAppSelector(selectTodos);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getItems());
+  }, [items]);
+
   return (
     <Styled.List>
-      <Styled.Title>{items.length !== 0 ? 'List of items' : 'No items found'}</Styled.Title>
+      <Styled.Title>{wantedItems.length !== 0 ? 'List of items' : 'No items found'}</Styled.Title>
       <Styled.Items>
-        {items.map(({ id, ...props }: TodoModel) => (
+        {wantedItems.map(({ id, ...props }: TodoModel) => (
           <Item key={`${id}`} {...{ id, ...props }} />
         ))}
       </Styled.Items>

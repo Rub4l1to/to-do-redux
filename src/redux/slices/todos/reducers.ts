@@ -17,21 +17,21 @@ export default {
       ...payload,
     });
   },
+  getItems: (state: TodosState) => {
+    state.wantedItems = state.items;
+  },
+
   removeItem: (state: TodosState, action: PayloadAction<string>) => {
     const { payload } = action;
-
     state.wantedItems = state.wantedItems.filter((item) => item.id !== payload);
-    state.items = state.items.filter((item) => item.id !== payload);
   },
   searchItem: (state: TodosState, action: PayloadAction<string>) => {
     const { payload } = action;
-
-    state.items = [...state.items];
-    state.wantedItems = state.items.filter((item) => item.name.includes(payload));
+    const newSearch = state.items.filter((item) => item.name.includes(payload));
+    state.wantedItems = payload === '' ? state.items : newSearch;
   },
   updateItem: (state: TodosState, action: PayloadAction<TodoModel>) => {
     const { payload } = action;
-
     const index = state.items.findIndex((item) => item.id === payload.id);
     state.items[index] = payload;
   },

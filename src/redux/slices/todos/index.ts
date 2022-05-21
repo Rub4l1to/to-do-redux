@@ -25,6 +25,6 @@ export const todos = createSlice({
   extraReducers: ({ addMatcher, addCase }) => {},
 });
 
-export const { addItem, removeItem, searchItem, updateItem } = todos.actions;
+export const { getItems, addItem, removeItem, searchItem, updateItem } = todos.actions;
 
 export default todos.reducer;
